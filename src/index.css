@@ -24,9 +24,23 @@ body{
     justify-content: center;
 }
 
-.am{
-    margin-bottom: 2rem;
+.frecuencias h1{
+    margin-bottom: 5rem;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 800;
 }
+
+.am{
+    margin-bottom: 1rem;
+}
+.am h2{
+    font-size: 27px;
+}
+
 .fm{
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+.fm h2{
+    font-size: 27px;
 }
