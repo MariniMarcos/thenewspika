@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
-import { PauseCircleIcon } from "./PauseCircleIcon";
+import { PlayCircleIcon } from "./PlayCircleIcon";
 import { Howl } from 'howler'; // Importa Howl desde la biblioteca Howler.js
 
 export default function Radio({ nombre, frecuencia, url }) {
@@ -59,8 +59,9 @@ export default function Radio({ nombre, frecuencia, url }) {
                 variant="light"
                 onClick={handlePlay}
               >
-                <PauseCircleIcon size={54} />
+                <PlayCircleIcon size={54} isPlaying={isPlaying} />
               </Button>
+
             </div>
           </div>
         </div>
