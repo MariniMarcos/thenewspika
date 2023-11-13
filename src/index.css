@@ -82,8 +82,8 @@ body{
     width: 4rem;
 }
 .tituloMovile {
-    padding-top: 13px;
-    font-size: 19px;
+    padding-top: 10px;
+    font-size: 21px;
 }
 .tarjeta {
     display: flex;
@@ -93,3 +93,7 @@ body{
     margin: 1rem;
     font-size: 20px;
 }
+.font-size-lg {
+    font-size: 18px; 
+    font-weight: 400;
+  }

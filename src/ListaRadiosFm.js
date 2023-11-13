@@ -33,6 +33,7 @@ const ListaRadiosFm = () => {
             "bg-transparent",
             "text-black/90 dark:text-white/90",
             "placeholder:text-default-700/70 dark:placeholder:text-white/60",
+            "font-size-lg"
           ],
           innerWrapper: "bg-transparent",
           inputWrapper: [
