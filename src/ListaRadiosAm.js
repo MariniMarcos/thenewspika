@@ -15,7 +15,7 @@ const ListaRadiosAm = () => {
 );
 
   return (
-    <div>
+    <div className='fondoListaRadios'>
       <Menu />
 
      {/* Input de búsqueda */}

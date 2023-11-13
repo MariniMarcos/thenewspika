@@ -6,10 +6,20 @@ export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
+    { label: "Inicio", link: "/" },
+    { label: "Radios Am", link: "/lista-radios-am" },
+    { label: "Radios Fm", link: "/lista-radios-fm" },
+    { label: "Donaciones", link: "/donaciones" }
   ];
+
+  const handleGoMain = () => {
+    window.location.href = "/";
+  }
+
+  const handleMenuItemClick = (link) => {
+    // Puedes realizar otras acciones antes de redirigir si es necesario
+    window.location.href = link;
+  }
 
   return (
     <Navbar
@@ -25,7 +35,7 @@ export default function Menu() {
       <NavbarContent className="navbarContent sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <SpikaLogo/>
-          <p className="font-bold text-inherit tituloMovile">The New Spika</p>
+          <a onClick={handleGoMain} className="font-bold text-inherit tituloMovile">The New Spika</a>
         </NavbarBrand>
       </NavbarContent>
 
@@ -36,12 +46,12 @@ export default function Menu() {
         </NavbarBrand>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Features
+            Am
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link color="foreground" href="#" aria-current="page">
+            Fm
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -52,17 +62,15 @@ export default function Menu() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        {menuItems.map((menuItem, index) => (
+          <NavbarMenuItem key={`${menuItem.label}-${index}`}>
             <Link
               className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href="#"
+              style={{ color: 'black' }}
+              onClick={() => handleMenuItemClick(menuItem.link)}
               size="lg"
             >
-              {item}
+              {menuItem.label}
             </Link>
           </NavbarMenuItem>
         ))}
