@@ -1,14 +1,29 @@
-import React from "react";
-import {Card, CardBody, Image, Button, Slider} from "@nextui-org/react";
-import {HeartIcon} from "./HeartIcon";
-import {PauseCircleIcon} from "./PauseCircleIcon";
-import {NextIcon} from "./NextIcon";
-import {PreviousIcon} from "./PreviousIcon";
-import {RepeatOneIcon} from "./RepeatOneIcon";
-import {ShuffleIcon} from "./ShuffleIcon";
+import React, { useState } from "react";
+import { Card, CardBody, Image, Button } from "@nextui-org/react";
+import { PauseCircleIcon } from "./PauseCircleIcon";
+import { Howl } from 'howler'; // Importa Howl desde la biblioteca Howler.js
 
-export default function Radio() {
-  const [liked, setLiked] = React.useState(false);
+export default function Radio({ nombre, frecuencia, url }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    // Aquí puedes implementar la lógica para reproducir la URL
+    // Puedes usar una biblioteca como Howler.js o el API de audio de JavaScript
+    // Ejemplo con Howler.js:
+    // Si aún no tienes instalado howler, puedes hacerlo con: npm install howler
+    const sound = new Howl({
+      src: [url],
+      html5: true,
+    });
+
+    if (isPlaying) {
+      sound.pause();
+    } else {
+      sound.play();
+    }
+
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <Card
@@ -32,81 +47,19 @@ export default function Radio() {
           <div className="flex flex-col col-span-6 md:col-span-8">
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
-                <h3 className="font-semibold text-foreground/90">Daily Mix</h3>
-                <p className="text-small text-foreground/80">12 Tracks</p>
-                <h1 className="text-large font-medium mt-2">Frontend Radio</h1>
-              </div>
-              <Button
-                isIconOnly
-                className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
-                radius="full"
-                variant="light"
-                onPress={() => setLiked((v) => !v)}
-              >
-                <HeartIcon
-                  className={liked ? "[&>path]:stroke-transparent" : ""}
-                  fill={liked ? "currentColor" : "none"}
-                />
-              </Button>
-            </div>
-
-            <div className="flex flex-col mt-3 gap-1">
-              <Slider
-                aria-label="Music progress"
-                classNames={{
-                  track: "bg-default-500/30",
-                  thumb: "w-2 h-2 after:w-2 after:h-2 after:bg-foreground",
-                }}
-                color="foreground"
-                defaultValue={33}
-                size="sm"
-              />
-              <div className="flex justify-between">
-                <p className="text-small">1:23</p>
-                <p className="text-small text-foreground/50">4:32</p>
+                <h1 className="text-large font-medium mt-2">{nombre}</h1>
+                <h2 className="font-semibold text-foreground/90">{`${frecuencia}`}</h2>
               </div>
             </div>
-
             <div className="flex w-full items-center justify-center">
-              <Button
-                isIconOnly
-                className="data-[hover]:bg-foreground/10"
-                radius="full"
-                variant="light"
-              >
-                <RepeatOneIcon className="text-foreground/80" />
-              </Button>
-              <Button
-                isIconOnly
-                className="data-[hover]:bg-foreground/10"
-                radius="full"
-                variant="light"
-              >
-                <PreviousIcon />
-              </Button>
               <Button
                 isIconOnly
                 className="w-auto h-auto data-[hover]:bg-foreground/10"
                 radius="full"
                 variant="light"
+                onClick={handlePlay}
               >
                 <PauseCircleIcon size={54} />
-              </Button>
-              <Button
-                isIconOnly
-                className="data-[hover]:bg-foreground/10"
-                radius="full"
-                variant="light"
-              >
-                <NextIcon />
-              </Button>
-              <Button
-                isIconOnly
-                className="data-[hover]:bg-foreground/10"
-                radius="full"
-                variant="light"
-              >
-                <ShuffleIcon className="text-foreground/80" />
               </Button>
             </div>
           </div>
@@ -115,5 +68,4 @@ export default function Radio() {
     </Card>
   );
 }
-
 

@@ -1,16 +1,20 @@
 import React from 'react'
 import Radio from './Radio'
+import { api } from './api';
 
-const ListaRadios = () => {
+const ListaRadiosAm = () => {
   return (
     <div>
-        <Radio/>
-        <Radio/>
-        <Radio/>
-        <Radio/>
-        <Radio/>
+      {api.am.map((radio) => (
+        <Radio
+          key={radio.nombre}
+          url={radio.url}
+          nombre={radio.nombre}
+          frecuencia={radio.frecuencia}
+        />
+      ))}
     </div>
   )
 }
 
-export default ListaRadios
+export default ListaRadiosAm
