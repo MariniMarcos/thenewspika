@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Frecuencia from './Frecuencia';
+import Main from './Main';
 import ListaRadiosAm from './ListaRadiosAm';
 import ListaRadiosFm from './ListaRadiosFm';
 
@@ -11,7 +11,8 @@ export default function App() {
     <Router>
       <Routes>
         {/* Ruta para el componente principal */}
-        <Route path="/" element={<Frecuencia />} />
+        
+        <Route path="/" element={<Main/>} />
 
         {/* Ruta para el componente ListaRadiosAm */}
         <Route path="/lista-radios-am" element={<ListaRadiosAm />} />

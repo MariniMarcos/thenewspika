@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+h1,h2,h3,h4,h5,h6,p, li, ol {
+    font-family: Poppins;
+}
+
 body{
     background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
     height: auto;
@@ -11,17 +16,28 @@ body{
     justify-content: space-around;
 }
 
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+
 .radio{
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .frecuencias{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     align-items: center;
     justify-content: center;
+    margin-top: 5rem;
 }
 
 .frecuencias h1{
@@ -37,10 +53,35 @@ body{
 .am h2{
     font-size: 27px;
 }
-
 .fm{
     margin-top: 1rem;
 }
 .fm h2{
     font-size: 27px;
+}
+.foto{
+    width: 40%;
+}
+.text-large{
+    margin-top: 0;
+    width: 10rem;
+}
+.NombreYFrecuencia{
+    flex-direction: column;
+    width: 25vw;
+    margin-left: 1rem;
+}
+.navbarLogo{
+    margin-right: 0.5rem;
+}
+.navbarMenu{
+    flex-direction: row;
+    width: 100vw;
+}
+.w-6{
+    width: 4rem;
+}
+.tituloMovile {
+    padding-top: 13px;
+    font-size: 19px;
 }

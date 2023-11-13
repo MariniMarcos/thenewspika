@@ -33,7 +33,8 @@ export default function Radio({ nombre, frecuencia, url }) {
     >
       <CardBody>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-          <div className="relative col-span-6 md:col-span-4">
+          <div className="flex flex-col col-span-6 md:col-span-8">
+          <div className="relative col-span-6 md:col-span-4 foto">
             <Image
               alt="Album cover"
               className="object-cover"
@@ -43,10 +44,8 @@ export default function Radio({ nombre, frecuencia, url }) {
               width="100%"
             />
           </div>
-
-          <div className="flex flex-col col-span-6 md:col-span-8">
             <div className="flex justify-between items-start">
-              <div className="flex flex-col gap-0">
+              <div className="flex flex-col gap-0 NombreYFrecuencia">
                 <h1 className="text-large font-medium mt-2">{nombre}</h1>
                 <h2 className="font-semibold text-foreground/90">{`${frecuencia}`}</h2>
               </div>
