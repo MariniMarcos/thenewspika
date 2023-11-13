@@ -13,6 +13,7 @@ export default function App() {
         {/* Ruta para el componente principal */}
         
         <Route path="/" element={<Main/>} />
+        
 
         {/* Ruta para el componente ListaRadiosAm */}
         <Route path="/lista-radios-am" element={<ListaRadiosAm />} />
