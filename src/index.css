@@ -85,3 +85,7 @@ body{
     padding-top: 13px;
     font-size: 19px;
 }
+.tarjeta {
+    display: flex;
+    flex-direction: row;
+}
