@@ -1,15 +1,15 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link,} from "@nextui-org/react";
 import {SpikaLogo} from "./SpikaLogo.jsx";
 
 export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    { label: "Inicio", link: "/" },
-    { label: "Radios Am", link: "/lista-radios-am" },
-    { label: "Radios Fm", link: "/lista-radios-fm" },
-    { label: "Donaciones", link: "/donaciones" }
+    { label: "Inicio 📻", link: "/" },
+    { label: "Radios Am 🎙️", link: "/lista-radios-am" },
+    { label: "Radios Fm 🎶", link: "/lista-radios-fm" },
+    { label: "Donaciones 🥰", link: "https://cafecito.app/marinimarcos"},
   ];
 
   const handleGoMain = () => {
@@ -55,9 +55,7 @@ export default function Menu() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
+        <a href='https://cafecito.app/marinimarcos' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_1.png' alt='Invitame un café en cafecito.app' /></a>
         </NavbarItem>
       </NavbarContent>
 
