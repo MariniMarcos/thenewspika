@@ -153,7 +153,7 @@ api = {
       { url: "http://s11.stweb.tv/one/live/playlist.m3u8", 
         nombre: "One", 
         frecuencia: 103.7 },
-      { url: "http://14933.live.streamtheworld.com/RQPAAC", 
+      { url: "https://www.radioone1037.fm/", 
         nombre: "RQP", 
         frecuencia: 104.3 },
       { url: "http://playerservices.streamtheworld.com/api/livestream-redirect/LOS40_ARGENTINAAAC", 
