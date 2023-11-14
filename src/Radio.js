@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
 import { PlayCircleIcon } from "./PlayCircleIcon";
 import { Howl } from 'howler'; // Importa Howl desde la biblioteca Howler.js
 
 export default function Radio({ nombre, frecuencia, url }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const sound = useRef(null);
 
   const handlePlay = () => {
-    // Aquí puedes implementar la lógica para reproducir la URL
-    // Puedes usar una biblioteca como Howler.js o el API de audio de JavaScript
-    // Ejemplo con Howler.js:
-    // Si aún no tienes instalado howler, puedes hacerlo con: npm install howler
-    const sound = new Howl({
-      src: [url],
-      html5: true,
-    });
-
-    if (isPlaying) {
-      sound.pause();
+    if (sound.current) {
+      if (isPlaying) {
+        sound.current.pause();
+      } else {
+        sound.current.play();
+      }
     } else {
-      sound.play();
+      sound.current = new Howl({
+        src: [url],
+        html5: true,
+        onend: () => {
+          // Aquí puedes realizar acciones adicionales cuando la reproducción termine
+        },
+      });
+
+      sound.current.play();
     }
 
     setIsPlaying(!isPlaying);
