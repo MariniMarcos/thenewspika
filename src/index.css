@@ -64,7 +64,7 @@ body{
 }
 .text-large{
     margin-top: 0;
-    width: 10rem;
+    width: 11rem;
 }
 .NombreYFrecuencia{
     flex-direction: column;
@@ -101,4 +101,10 @@ body{
   }
 .fondoListaRadios{
     height: 100%;
+}
+.navbarContent{
+    width: 100vw;
+}
+.justify-start{
+    justify-content: flex-end;
 }

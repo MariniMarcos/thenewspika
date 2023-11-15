@@ -63,6 +63,7 @@ const ListaRadiosFm = () => {
           url={radio.url}
           nombre={radio.nombre}
           frecuencia={radio.frecuencia}
+          imagen={radio.imagen}
         />
       ))}
     </div>

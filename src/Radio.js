@@ -3,7 +3,7 @@ import { Card, CardBody, Image, Button } from "@nextui-org/react";
 import { PlayCircleIcon } from "./PlayCircleIcon";
 import { Howl } from 'howler'; // Importa Howl desde la biblioteca Howler.js
 
-export default function Radio({ nombre, frecuencia, url }) {
+export default function Radio({ nombre, frecuencia, url, imagen }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const sound = useRef(null);
 
@@ -44,7 +44,7 @@ export default function Radio({ nombre, frecuencia, url }) {
               className="object-cover"
               height={200}
               shadow="md"
-              src="https://nextui.org/images/album-cover.png"
+              src={imagen}
               width="100%"
             />
           </div>
