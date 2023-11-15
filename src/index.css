@@ -16,9 +16,30 @@ body{
     justify-content: space-around;
 }
 
+
+
 .main{
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.px-6 {
+    padding-left: 0;
+}
+
+.copyright{
+    margin-left: 0.5rem;
 }
 
 .radio{
@@ -28,8 +49,8 @@ body{
     margin-left: 1rem;
     display: flex;
     flex-direction: row;
-
 }
+
 
 .frecuencias{
     display: flex;
@@ -37,7 +58,6 @@ body{
     height: auto;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
 }
 
 .frecuencias h1{
@@ -98,13 +118,72 @@ body{
     font-weight: 400;
     padding-left: 2rem;
 
-  }
+    }
 .fondoListaRadios{
     height: 100%;
+    width: 100%;
 }
 .navbarContent{
     width: 100vw;
 }
 .justify-start{
     justify-content: flex-end;
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+    .justify-start{
+        justify-content: flex-start;
+    }
+    .foto{
+        width: 100%;
+    }
+    .fondoListaRadios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+        display: flex;
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .justify-start{
+        justify-content: flex-start;
+    }
+    .foto{
+        width: 100%;
+    }
+    .fondoListaRadios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+        display: flex;
+    }
+
+    
+}
+
+@media (min-width: 1200px) {
+    .justify-start{
+        justify-content: flex-start;
+    }
+    .foto{
+        width: 100%;
+    }
+    .fondoListaRadios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid{
+        display: flex;
+    }
+    
 }

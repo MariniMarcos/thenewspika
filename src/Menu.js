@@ -45,17 +45,22 @@ export default function Menu() {
           <p className="font-bold text-inherit">The New Spika</p>
         </NavbarBrand>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Am
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link color="foreground" href="#" aria-current="page">
-            Fm
+          <Link color="foreground" href="/">
+          Inicio 📻
           </Link>
         </NavbarItem>
         <NavbarItem>
-        <a href='https://cafecito.app/marinimarcos' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_1.png' alt='Invitame un café en cafecito.app' /></a>
+          <Link color="foreground" href="/lista-radios-am">
+          Radios Am 🎙️
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/lista-radios-fm" >
+          Radios Fm 🎶
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+        <Link color="foreground" href="https://cafecito.app/marinimarcos"> Donaciones 🥰 </Link>
         </NavbarItem>
       </NavbarContent>
 
